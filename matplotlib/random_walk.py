@@ -10,10 +10,12 @@ class RandomWalk:
         self.y_values=[0]
     def fill_walk(self):
         '''计算随机漫步包含的所有点'''
+        # 不断漫步 直到列表达到指定的长度
         while len(self.x_values)<self.num_points:
-            x_direction=choice([1,-1])
-            x_distance =choice([0,1,2,3,4])
+            x_direction=choice([1,-1]) #表示x是往左走，还是往右走
+            x_distance =choice([0,1,2,3,4]) # 随机一个数表示走多远
             x_step =x_direction*x_distance
+
             y_direction=choice([1,-1])
             y_distance =choice([0,1,2,3,4])
             y_step =y_direction*y_distance
@@ -23,7 +25,7 @@ class RandomWalk:
                 continue
 
             #计算下一个点的x y的值
-            x=self.x_values[-1]+x_step
+            x=self.x_values[-1]+x_step  # 将最后一个值相加 对于y也做同样的处理
             y=self.y_values[-1]+y_step
 
             self.x_values.append(x)
