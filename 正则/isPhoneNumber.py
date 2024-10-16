@@ -1,4 +1,7 @@
 # 检查是否是手机号格式
+from django.contrib.gis.db.backends.postgis.pgraster import chunk
+
+
 def isPhoneNumber(text):
     if len(text)!=12: #先检查字符串是否够12个字符串
         return False
@@ -16,9 +19,20 @@ def isPhoneNumber(text):
         if not text[i].isdecimal():
             return False
     return True
-print('415-555-4242 is a phone number:')
-print(isPhoneNumber('415-555-4242'))
-print('Moshi moshi is a phone number:')
-print(isPhoneNumber('Moshi moshi'))
+'''代替下面四个语句'''
+message ='Call me at 415-555-1011 tomorrow. 415-555-9999 is my office.'
+for i in range(len(message)):
+    chunk=message[i:i+12]
+    if isPhoneNumber(chunk):
+        print('Phone number found:'+chunk)
+print('Done')
 
-#测试
+
+
+
+#
+# print('415-555-4242 is a phone number:')
+# print(isPhoneNumber('415-555-4242'))
+# print('Moshi moshi is a phone number:')
+# print(isPhoneNumber('Moshi moshi'))
+
