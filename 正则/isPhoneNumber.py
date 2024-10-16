@@ -21,9 +21,9 @@ def isPhoneNumber(text):
     return True
 '''代替下面四个语句'''
 message ='Call me at 415-555-1011 tomorrow. 415-555-9999 is my office.'
-for i in range(len(message)):
-    chunk=message[i:i+12]
-    if isPhoneNumber(chunk):
+for i in range(len(message)):# for每次循环都会取自message中的12个字符赋值给chunk
+    chunk=message[i:i+12]   #第一次赋值即字符（Call me at 4） 下次迭代就是接下来的字符
+    if isPhoneNumber(chunk): #利用isPhoneNumber()函数来判断是否是电话号码格式 如果是就打印出来
         print('Phone number found:'+chunk)
 print('Done')
 
