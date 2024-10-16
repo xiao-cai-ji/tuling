@@ -1,3 +1,5 @@
+'''有问题 匹配不上'''
+# TODO   有问题 匹配不上
 import re
 # phoneNumberRegex=re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')# 电话号码的正则表达式
 # mo =phoneNumberRegex.search('My number is 415-555-4242.')# Regex 对象的search() 方法查找传入的表达式
