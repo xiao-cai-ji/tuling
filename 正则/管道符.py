@@ -46,5 +46,5 @@ greedyRegex=re.compile(r'(Ha){3,5}')# 贪心匹配
 mo15=greedyRegex.search('HaHaHaHaHa')
 print(mo15.group())
 nongreedyRegex=re.compile(r'(Ha){3,5}?')# 非贪心匹配在}后加？
-mo16=nongreedyRegex.search('HaHaHaHaHa')
+mo16=nongreedyRegex.search('HaHaHaHaHa')# Search 返回一个Match对象
 print(mo16.group())
