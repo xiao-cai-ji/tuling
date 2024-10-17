@@ -32,3 +32,13 @@ print(noNewlineRegex.search('The cat in the hat sat on.\the flat mat').group())
 
 noNewlineRegex=re.compile('.*',re.DOTALL)# 传入了re.DOTALL 将匹配所有字符
 print(noNewlineRegex.search('The cat in the.\hat sat on.\the flat mat').group())
+
+'''不区分大小写的匹配'''
+robocop=re.compile(r'robocop', re.I)
+print(robocop.search('Robocop is part man,part machine,add cop.').group())
+print(robocop.search('ROBOCOP protects the innocent.').group())
+print(robocop.search('AI,why does your programming book talk about robocop so much').group())
+
+'''用sub() 方法替换字符串'''
+namesRegex =re.compile(r'Agent \w+')# 查找
+print(namesRegex.sub('CENSORED','Agent Alice gave the secret documents to Agent Bob'))# 第一个是用于取代发现的字符
